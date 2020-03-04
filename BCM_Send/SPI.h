@@ -30,10 +30,9 @@
 /*********************************************/
 #define OK  1
 #define ERR 0
-extern volatile uint8_t data_sent;
 
  void SPI_Init();
- void SPI_Send(uint8_t u8_data);
+ void SPI_Send(uint8_t );
  uint8_t  SPI_Receive(void);
  uint8_t  SPI_Checks_for_collision(void);
  void SPI_callBackFunc_Assign(void(*PtrToSPI_Isr)(void));

@@ -10,9 +10,13 @@
 #include "uart.h"
 #include "registers.h"
 #define Buffer_Size  10
-volatile uint8_t u8_Notification_TX=0;
+
+volatile uint8_t u8_Notification_RX=0;
+/*
 volatile uint8_t gU8_Data_Recieved=0;
 volatile uint8_t gU8_Data_transmited=0;
+*/
+extern volatile uint8_t u8_DATA;
 uint8_t BufferRequested[Buffer_Size];
 volatile uint8_t u8_index=0;
 volatile uint8_t buf_is_full=0;
@@ -156,26 +160,18 @@ SET_BIT(UCSRB,TXCIE);
 SET_BIT(SPCR,SPIE);
 }
 void UartRecieveInterrupt(void)
-{
-/*The mechanism to access array*/
-// BufferRequested[u16_index]=gU8_Data_Recieved;
-//  if (u16_index < Buffer_Size){
-//  u16_index++;
-//  buf_is_full=0;
-//  }
-//  else{
-//  buf_is_full=1;
-//  u16_index=0;
-//      }
+{/*
 if(u8_index<Buffer_Size)
 {
-  data_sent=UDR;
-  BufferRequested[u8_index]=data_sent;
+u8_Notification_RX=TRUE;
+*/  u8_DATA=UDR;/*
+  BufferRequested[u8_index]=u8_DATA;
   u8_index++;
 }
   else{
     u8_index=0;
       }
+*/
 }
 void UartTransmitInterrupt(void)
 {
@@ -197,12 +193,12 @@ UDR = gU8_Data_transmited;
      }
 u8_Notification_TX=TRUE;
 */
-UDR = gU8_Data_transmited;
+UDR =u8_DATA;
 }
 void UartTransmitdataInt(uint8_t data_to_transmit)
 {
 
-	  gU8_Data_transmited=data_to_transmit;
+	  u8_DATA=data_to_transmit;
 
 }
 

@@ -5,11 +5,10 @@
  *  Author: mo
  */
 #include "BCM_Send.h"
-
-
+/*
 EnmBCMError_t BCM_Init (const BCM_ConfigType * ConfigPtr )
 {
-/*Intialize SPI....intialize UART*/
+Intialize SPI....intialize UART
 
 
 }

@@ -8,10 +8,9 @@
 #include "SPI.h"
 #include "registers.h"
 #include "gpio.h"
-
-volatile uint8_t data_sent;
-
 extern ST_SPI_Configuration SPI_Config ;
+extern volatile uint8_t u8_DATA;
+
 void SPI_Init()
 {
 
@@ -22,7 +21,7 @@ void SPI_Init()
 	//SPCR = SPCR | (SPI_INT_ENABLE<<SPIE);
 	SPCR = gConfig->MASTER_SLAVE_MODE | gConfig->DATA_ORDER
 			  | gConfig->OPERATING_LEVEL | gConfig->PRESCALAR
-			 | gConfig->SAMPLING_EDGE;
+			 | gConfig->SAMPLING_EDGE | gConfig ->INT_ENABLE;
 
 	SPSR |= gConfig->DOUBLE_SPEED;
 			 gpioPinDirection(GPIOB, BIT4 | BIT5 | BIT7, OUTPUT);
@@ -35,7 +34,7 @@ void SPI_Init()
 }
 void SPI_Transciever_INT(void)
 {
-	SPDR=data_sent;
+	SPDR=u8_DATA;
 }
 void  SPI_Send(uint8_t u8_data)
 {
