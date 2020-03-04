@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Atmel Studio Solution File, Format Version 11.00
+Project("{54F91283-7BC4-4236-8FF9-10F437C3AD48}") = "BCM_Send", "BCM_Send\BCM_Send.cproj", "{7AF1335A-537E-4E7B-A114-EB152AC2433A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|AVR = Debug|AVR
+		Release|AVR = Release|AVR
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7AF1335A-537E-4E7B-A114-EB152AC2433A}.Debug|AVR.ActiveCfg = Debug|AVR
+		{7AF1335A-537E-4E7B-A114-EB152AC2433A}.Debug|AVR.Build.0 = Debug|AVR
+		{7AF1335A-537E-4E7B-A114-EB152AC2433A}.Release|AVR.ActiveCfg = Release|AVR
+		{7AF1335A-537E-4E7B-A114-EB152AC2433A}.Release|AVR.Build.0 = Release|AVR
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
