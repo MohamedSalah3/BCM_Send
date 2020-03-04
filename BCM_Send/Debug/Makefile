@@ -35,7 +35,9 @@ SUBDIRS :=
 
 # Add inputs and outputs from these tool invocations to the build variables 
 C_SRCS +=  \
+../BCM_Config.c \
 ../BCM_Send.c \
+../main.c \
 ../gpio.c \
 ../Interrupts.c \
 ../led.c \
@@ -52,7 +54,9 @@ ASM_SRCS +=
 
 
 OBJS +=  \
+BCM_Config.o \
 BCM_Send.o \
+main.o \
 gpio.o \
 Interrupts.o \
 led.o \
@@ -63,7 +67,9 @@ uart.o
 
 
 OBJS_AS_ARGS +=  \
+BCM_Config.o \
 BCM_Send.o \
+main.o \
 gpio.o \
 Interrupts.o \
 led.o \
@@ -74,7 +80,9 @@ uart.o
 
 
 C_DEPS +=  \
+BCM_Config.d \
 BCM_Send.d \
+main.d \
 gpio.d \
 Interrupts.d \
 led.d \
@@ -85,7 +93,9 @@ uart.d
 
 
 C_DEPS_AS_ARGS +=  \
+BCM_Config.d \
 BCM_Send.d \
+main.d \
 gpio.d \
 Interrupts.d \
 led.d \
@@ -104,6 +114,10 @@ ADDITIONAL_DEPENDENCIES:=
 OUTPUT_FILE_DEP:= ./makedep.mk
 
 # AVR32/GNU C Compiler
+
+
+
+
 
 
 

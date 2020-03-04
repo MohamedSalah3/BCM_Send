@@ -169,8 +169,8 @@ void UartRecieveInterrupt(void)
 //      }
 if(u8_index<Buffer_Size)
 {
-  gU8_Data_Recieved=UDR;
-  BufferRequested[u8_index]=gU8_Data_Recieved;
+  data_sent=UDR;
+  BufferRequested[u8_index]=data_sent;
   u8_index++;
 }
   else{

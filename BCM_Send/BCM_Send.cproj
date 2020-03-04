@@ -67,7 +67,22 @@
     </ToolchainSettings>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="BCM_Config.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BCM_Config.h">
+      <SubType>compile</SubType>
+    </Compile>
     <Compile Include="BCM_Send.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="BCM_Send.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Error_Report.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="main.c">
       <SubType>compile</SubType>
     </Compile>
     <Compile Include="gpio.c">

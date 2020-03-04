@@ -35,7 +35,7 @@ void SPI_Init()
 }
 void SPI_Transciever_INT(void)
 {
-	SPDR=5;//data_sent;
+	SPDR=data_sent;
 }
 void  SPI_Send(uint8_t u8_data)
 {

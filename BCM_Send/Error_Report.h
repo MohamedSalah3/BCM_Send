@@ -3,7 +3,7 @@
  *
  * Created: 26/02/2020 06:48:35 م
  *  Author: mo
- */ 
+ */
 
 
 #ifndef ERROR_REPORT_H_
@@ -19,5 +19,6 @@
 #define STOP_WITHOUT_START 10
 #define MULTIPLE_START 12
 #define TMU_MODULE 40
+#define BCM_MODULE 50
 
 #endif /* ERROR_REPORT_H_ */
