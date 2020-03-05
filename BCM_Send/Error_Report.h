@@ -20,5 +20,5 @@
 #define MULTIPLE_START 12
 #define TMU_MODULE 40
 #define BCM_MODULE 50
-
+typedef uint8_t ERROR_STATUS;
 #endif /* ERROR_REPORT_H_ */

@@ -21,4 +21,5 @@ extern void UartRecieveInterrupt(void);
 extern void UartTransmitPooling(uint8_t Data);
 extern uint8_t UartRecievePooling(void);
 extern void Enable_communication_interrupt(void);
+extern void Uart_De_Init(void);
 #endif /* UART_H_ */

@@ -12,25 +12,25 @@
 #include "uart.h"
 #include "Interrupts.h"
 #include "timers.h"
+#include "Error_Report.h"
 /*u8_channel_Protcol*/
-#define UART  0
-#define  SPI  1
-#define I2C 2
+#define   UART  1
+#define   SPI   2
+#define   UARTANDSPI   3
+#define   I2C   4
+
 /*u8_BCM_ID*/
-#define TASK1_ID A
-#define TASK2_ID  B
-#define TASK3_ID  C
-/************************************************************/
-/*            ERROR_STATUS      */
-typedef uint8_t ERROR_STATUS;
-/*************************************************************/
+#define TASK1_ID  'A'
+#define TASK2_ID  'B'
+#define TASK3_ID  'C'
 /* u8_data_Lenght*/
 typedef struct ST_BCM_ConfigType
 {
 uint8_t u8_channel_Protcol;
 uint8_t u8_BCM_ID;
-uint8_t u8_data_Lenght;
+uint16_t u16_data_Lenght;
+uint8_t Num_of_Frames;
 }BCM_ConfigType;
 
-
+extern const BCM_ConfigType BCM_Configuration;
 #endif /* BCM_CONFIG_H_ */

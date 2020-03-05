@@ -68,3 +68,8 @@ uint8_t  SPI_Receive(void)
 {
 	 return READBIT(SPSR, WCOL);
 }
+
+void SPI_De_Init(void)
+{
+SPCR=0;
+}

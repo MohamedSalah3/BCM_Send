@@ -212,3 +212,9 @@ uint8_t data=0;
 data = UDR;
 return data;
 }
+void Uart_De_Init(void)
+{
+  CLEAR_BIT(UCSRB,TXEN);/*TXEN*/
+  CLEAR_BIT(UCSRB,RXEN);/*RXEN*/
+
+}
