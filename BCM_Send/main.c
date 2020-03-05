@@ -13,7 +13,7 @@ int main(void)
 	Uart_Init(Baud9600,OneStopBit,NoParity,EightBits,ASynchronous);
 	Enable_communication_interrupt();
 	SPI_Init();
-	Led_On(LED_0);
+	//Led_On(LED_0);
 	//Uart_tryansmitfirstbyte(data_signature);
   //u8_DATA=UDR;
 	SPDR=u8_DATA;

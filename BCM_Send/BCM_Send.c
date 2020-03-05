@@ -5,21 +5,20 @@
  *  Author: mo
  */
 #include "BCM_Send.h"
-/*
-EnmBCMError_t BCM_Init (const BCM_ConfigType * ConfigPtr )
+
+ERROR_STATUS BCM_Init (const BCM_ConfigType * ConfigPtr )
 {
-Intialize SPI....intialize UART
+/*Intialize SPI..*/
 
 
 }
-
+/*
 EnmBCMError_t BCM_DeInit ( void )
 {
 
 
 
 }
-/*
 BCM_TxDispatch
 {
 

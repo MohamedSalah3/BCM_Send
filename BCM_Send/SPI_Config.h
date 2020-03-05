@@ -39,8 +39,8 @@
 
 
  /*SPI_INT_ENABLE*/
-#define	SPI_INT_OFF = 0x00
-#define	SPI_INT_ON	= 0x80
+#define	SPI_INT_OFF  0x00
+#define	SPI_INT_ON	 0x80
 /* SPI_DATA_ORDER */
 #define	SPI_LSB_FISRT  0x20
 #define	SPI_MSB_FISRT  0x00
@@ -48,8 +48,8 @@
 
 typedef struct ST_SPI_Configuration
 {
-	uint8_t MASTER_SLAVE_MODE ;
-	uint8_t  PRESCALAR ;
+	uint8_t MASTER_SLAVE_MODE;
+	uint8_t  PRESCALAR;
 	uint8_t  ENABLE;
 	uint8_t  DOUBLE_SPEED;
 	uint8_t  OPERATING_LEVEL;
