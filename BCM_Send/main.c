@@ -7,8 +7,7 @@
  #include "BCM_Send.h"
  volatile uint8_t u8_DATA='T';
 int main(void)
-{uint8_t data_signature='M';
-	uint8_t flag=0;
+{
 	gpioPinDirection(GPIOB,BIT3,OUTPUT);
 	Uart_Init(Baud9600,OneStopBit,NoParity,EightBits,ASynchronous);
 	Enable_communication_interrupt();

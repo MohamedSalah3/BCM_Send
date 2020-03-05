@@ -637,37 +637,37 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x00000000     0x1e00
+.debug_info     0x00000000     0x1de3
  *(.debug_info)
  .debug_info    0x00000000       0xee BCM_Send.o
- .debug_info    0x000000ee      0x1bb main.o
- .debug_info    0x000002a9      0x25a gpio.o
- .debug_info    0x00000503      0x525 Interrupts.o
- .debug_info    0x00000a28      0x16d led.o
- .debug_info    0x00000b95      0x230 SPI.o
- .debug_info    0x00000dc5       0xf8 SPI_Config.o
- .debug_info    0x00000ebd      0x94e timer.o
- .debug_info    0x0000180b      0x35e uart.o
- .debug_info    0x00001b69       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
- .debug_info    0x00001c46       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
- .debug_info    0x00001d23       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+ .debug_info    0x000000ee      0x19e main.o
+ .debug_info    0x0000028c      0x25a gpio.o
+ .debug_info    0x000004e6      0x525 Interrupts.o
+ .debug_info    0x00000a0b      0x16d led.o
+ .debug_info    0x00000b78      0x230 SPI.o
+ .debug_info    0x00000da8       0xf8 SPI_Config.o
+ .debug_info    0x00000ea0      0x94e timer.o
+ .debug_info    0x000017ee      0x35e uart.o
+ .debug_info    0x00001b4c       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .debug_info    0x00001c29       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .debug_info    0x00001d06       0xdd c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
  *(.gnu.linkonce.wi.*)
 
-.debug_abbrev   0x00000000      0x804
+.debug_abbrev   0x00000000      0x7f3
  *(.debug_abbrev)
  .debug_abbrev  0x00000000        0x1 BCM_Config.o
  .debug_abbrev  0x00000001       0x8d BCM_Send.o
- .debug_abbrev  0x0000008e       0xb0 main.o
- .debug_abbrev  0x0000013e       0xc2 gpio.o
- .debug_abbrev  0x00000200       0xb9 Interrupts.o
- .debug_abbrev  0x000002b9       0x8a led.o
- .debug_abbrev  0x00000343      0x109 SPI.o
- .debug_abbrev  0x0000044c       0x66 SPI_Config.o
- .debug_abbrev  0x000004b2      0x1ce timer.o
- .debug_abbrev  0x00000680      0x148 uart.o
- .debug_abbrev  0x000007c8       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
- .debug_abbrev  0x000007dc       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
- .debug_abbrev  0x000007f0       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
+ .debug_abbrev  0x0000008e       0x9f main.o
+ .debug_abbrev  0x0000012d       0xc2 gpio.o
+ .debug_abbrev  0x000001ef       0xb9 Interrupts.o
+ .debug_abbrev  0x000002a8       0x8a led.o
+ .debug_abbrev  0x00000332      0x109 SPI.o
+ .debug_abbrev  0x0000043b       0x66 SPI_Config.o
+ .debug_abbrev  0x000004a1      0x1ce timer.o
+ .debug_abbrev  0x0000066f      0x148 uart.o
+ .debug_abbrev  0x000007b7       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_exit.o)
+ .debug_abbrev  0x000007cb       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_copy_data.o)
+ .debug_abbrev  0x000007df       0x14 c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1.95/avrtoolchain/bin/../lib/gcc/avr/4.6.2/avr5\libgcc.a(_clear_bss.o)
 
 .debug_line     0x00000000      0x73f
  *(.debug_line)
@@ -696,25 +696,25 @@ LOAD c:/program files (x86)/atmel/atmel studio 6.0/extensions/atmel/avrgcc/3.4.1
  .debug_frame   0x000008d4      0x270 timer.o
  .debug_frame   0x00000b44       0xac uart.o
 
-.debug_str      0x00000000      0xf5a
+.debug_str      0x00000000      0xf4b
  *(.debug_str)
  .debug_str     0x00000000      0x101 BCM_Send.o
                                 0x144 (size before relaxing)
- .debug_str     0x00000101      0x141 main.o
-                                0x214 (size before relaxing)
- .debug_str     0x00000242       0xce gpio.o
+ .debug_str     0x00000101      0x12d main.o
+                                0x200 (size before relaxing)
+ .debug_str     0x0000022e       0xce gpio.o
                                 0x1a1 (size before relaxing)
- .debug_str     0x00000310      0x232 Interrupts.o
+ .debug_str     0x000002fc      0x232 Interrupts.o
                                 0x337 (size before relaxing)
- .debug_str     0x00000542       0x5f led.o
+ .debug_str     0x0000052e       0x5f led.o
                                 0x150 (size before relaxing)
- .debug_str     0x000005a1       0xf2 SPI.o
+ .debug_str     0x0000058d       0xf2 SPI.o
                                 0x206 (size before relaxing)
- .debug_str     0x00000693       0x12 SPI_Config.o
+ .debug_str     0x0000067f       0x12 SPI_Config.o
                                 0x15d (size before relaxing)
- .debug_str     0x000006a5      0x75c timer.o
+ .debug_str     0x00000691      0x761 timer.o
                                 0x83d (size before relaxing)
- .debug_str     0x00000e01      0x159 uart.o
+ .debug_str     0x00000df2      0x159 uart.o
                                 0x32e (size before relaxing)
 
 .debug_loc      0x00000000     0x1cab
