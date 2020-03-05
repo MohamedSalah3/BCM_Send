@@ -39,5 +39,5 @@
  uint8_t spi_INT_CALLED(void);
 extern void SPI_Transciever_INT(void);
 extern void SPI_De_Init(void);
-
+extern void spi_send_first(uint8_t data);
 #endif /* SPI_SPI_H_ */

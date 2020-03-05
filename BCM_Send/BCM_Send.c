@@ -6,7 +6,7 @@
  */
 #include "BCM_Send.h"
 static uint8_t u8_Is_Intialized=0;
-
+static uint8_t u8_frameID=0;
 ERROR_STATUS BCM_Init (const BCM_ConfigType * ConfigPtr )
 {uint8_t ret=E_OK;
 
@@ -39,7 +39,7 @@ u8_Is_Intialized++;
 
 }
 }
-
+u8_frameID=ConfigPtr -> u8_BCM_ID;
 return ret;
 }
 ERROR_STATUS BCM_DeInit (const BCM_ConfigType * ConfigPtr)
@@ -82,10 +82,8 @@ return ret;
 }
 
 
-/*
-BCM_Send
+
+ERROR_STATUS BCM_Send(void)
 {
-
-
+spi_send_first(u8_frameID);
 }
-*/

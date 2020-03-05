@@ -8,7 +8,7 @@
 
 	struct ST_SPI_Configuration SPI_Config = {
 		SPI_MASTER,
-		SPI_Fosc16,
+		SPI_Fosc128,
 		SPI_ENABLE_ON,
 		SPI_DOUBLE_SPEED_MODE_OFF,
 		SPI_IDLE_HIGH,
