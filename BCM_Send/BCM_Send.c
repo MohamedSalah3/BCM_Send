@@ -45,45 +45,50 @@ return ret;
 ERROR_STATUS BCM_DeInit (const BCM_ConfigType * ConfigPtr)
 {
 uint8_t ret=E_OK;
-if(u8_Is_Intialized==1)
-{
-  switch (ConfigPtr->u8_channel_Protcol) {
-  case SPI:
-  u8_Is_Intialized--;
-	SPI_De_Init();
-  break;
-  case UART:
-u8_Is_Intialized--;
-Uart_De_Init();
-  break;
-  case UARTANDSPI:
-  u8_Is_Intialized--;
-  SPI_De_Init();
-  Uart_De_Init();
-  break;
-  case I2C:
-  ret=INVALID_PARM+BCM_MODULE;
-  break;
-}
-}else if(u8_Is_Intialized > 1){
-ret=MULTIPLE_INIT+BCM_MODULE;
-}else{
-ret = NOT_INIT+BCM_MODULE;
-}
+    if(u8_Is_Intialized==1)
+      {
+      switch (ConfigPtr->u8_channel_Protcol)
+        {
+          case SPI:
+            u8_Is_Intialized--;
+	           SPI_De_Init();
+          break;
+          case UART:
+            u8_Is_Intialized--;
+             Uart_De_Init();
+          break;
+          case UARTANDSPI:
+            u8_Is_Intialized--;
+            SPI_De_Init();
+            Uart_De_Init();
+          break;
+          case I2C:
+            ret=INVALID_PARM+BCM_MODULE;
+          break;
+        }
+    }else if(u8_Is_Intialized > 1)
+      {
+        ret=MULTIPLE_INIT+BCM_MODULE;
+      }else
+      {
+        ret = NOT_INIT+BCM_MODULE;
+      }
 return ret;
 }
 
-ERROR_STATUS BCM_TxDispatcher()
+ERROR_STATUS BCM_TxDispatcher(void)
 {
 uint8_t ret=E_OK;
 
 
 return ret;
 }
-
-
-
+/*BCM SEND Intiate spi connection*/
 ERROR_STATUS BCM_Send(void)
 {
-spi_send_first(u8_frameID);
+  uint8_t ret=E_OK;
+
+    spi_send_first(u8_frameID);
+
+  return ret;
 }

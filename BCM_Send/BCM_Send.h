@@ -8,17 +8,14 @@
 
 #ifndef BCM_SEND_H_
 #define BCM_SEND_H_
-#include "BCM_Config.h"/*
+#include "BCM_Config.h"
 
+ERROR_STATUS BCM_Init (const BCM_ConfigType * ConfigPtr );
 
-EnmBCMError_t BCM_Init (const BCM_ConfigType * ConfigPtr );
-Intialize SPI....intialize UART
-EnmBCMError_t BCM_DeInit ( void );
+ERROR_STATUS BCM_DeInit (const BCM_ConfigType * ConfigPtr);
 
-BCM_TxDispatch();
+ERROR_STATUS BCM_TxDispatcher(void);
 
-BCM_Send();
+ERROR_STATUS BCM_Send(void);
 
-
-*/
 #endif /* BCM_SEND_H_ */
