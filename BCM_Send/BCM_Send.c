@@ -84,11 +84,33 @@ uint8_t ret=E_OK;
 return ret;
 }
 /*BCM SEND Intiate spi connection*/
-ERROR_STATUS BCM_Send(void)
+ERROR_STATUS BCM_Send(
+  uint8_t u8_channel_Protcol ,
+  uint8_t u8_BCM_ID,
+  uint16_t u16_data_Lenght,
+  uint8_t Num_of_Frames )
 {
   uint8_t ret=E_OK;
+/**/
+switch (u8_channel_Protcol)
+  {
+    case SPI:
+      spi_send_first(u8_BCM_ID);
+    break;
+    case UART:
+    	Uart_tryansmitfirstbyte(u8_BCM_ID);
+    break;
+    case UARTANDSPI:
+      spi_send_first(u8_BCM_ID);
+    break;
+    case I2C:
+      ret=INVALID_PARM+BCM_MODULE;
+    break;
+    default:
+    ret=E_NOK+INVALID_PARM+BCM_MODULE;
+  }
 
-    spi_send_first(u8_frameID);
+
 
   return ret;
 }
