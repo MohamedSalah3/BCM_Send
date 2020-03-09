@@ -5,11 +5,16 @@
  *  Author: mo
  */
 #include "BCM_Send.h"
+
 static uint8_t u8_Is_Intialized=0;
 static uint8_t u8_frameID=0;
+extern uint8_t Buffer_Array[];
+uint8_t u8Index=0;
+extern uint8_t u8_DATA;
+extern uint8_t size;
 ERROR_STATUS BCM_Init (const BCM_ConfigType * ConfigPtr )
-{uint8_t ret=E_OK;
-
+{
+  uint8_t ret=E_OK;
 if(ConfigPtr == NULL){ret=NULL_PTR+BCM_MODULE;}
 else{
 /*Intialize SPI..*/
@@ -79,7 +84,11 @@ return ret;
 ERROR_STATUS BCM_TxDispatcher(void)
 {
 uint8_t ret=E_OK;
-
+/******Disable SPI int******/
+/*while uart is filling buffer*/
+/*calculate check sum*/
+/*Enable Spi int and disable uart int when buffer is full*/
+/*When spi emptys buffer enable uart interrupt*/
 
 return ret;
 }
@@ -87,21 +96,30 @@ return ret;
 ERROR_STATUS BCM_Send(
   uint8_t u8_channel_Protcol ,
   uint8_t u8_BCM_ID,
-  uint16_t u16_data_Lenght,
+  uint8_t u8_data_Lenght,
   uint8_t Num_of_Frames )
 {
   uint8_t ret=E_OK;
-/**/
+
+/*BCMID  & data length*/
+Buffer_Array[0]=u8_BCM_ID;
+Buffer_Array[1]=u8_data_Lenght;
+u8Index=2;
+/*************************************************************/
+            /*                                */
+/*************************************************************/
+
 switch (u8_channel_Protcol)
   {
     case SPI:
       spi_send_first(u8_BCM_ID);
+      spi_send_first(u8_data_Lenght);
     break;
     case UART:
     	Uart_tryansmitfirstbyte(u8_BCM_ID);
     break;
     case UARTANDSPI:
-      spi_send_first(u8_BCM_ID);
+       spi_send_first(u8_BCM_ID);
     break;
     case I2C:
       ret=INVALID_PARM+BCM_MODULE;
@@ -110,7 +128,36 @@ switch (u8_channel_Protcol)
     ret=E_NOK+INVALID_PARM+BCM_MODULE;
   }
 
-
-
   return ret;
+}
+
+
+void Uart_Int_RX(void)
+{
+  u8_DATA=UDR;
+  if(u8Index<size)
+  {
+    Buffer_Array[u8Index]=u8_DATA;
+    u8Index++;
+  }
+    else{
+      u8Index=2;
+        }
+
+
+}
+void SPI_int_Master_Send(void)
+{
+  /******Disable uart Rx int******/
+  SPDR=u8_DATA;
+  if(u8Index<size)
+  {
+    u8_DATA=Buffer_Array[u8Index];
+    u8Index++;
+  }
+    else{
+      u8Index=2;
+        }
+
+
 }

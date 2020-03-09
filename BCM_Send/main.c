@@ -5,18 +5,23 @@
  *  Author: mo
  */
  #include "BCM_Send.h"
+#define BUFFER_SIZE 255
+uint8_t size=BUFFER_SIZE;
  volatile uint8_t u8_DATA='T';
+uint8_t Buffer_Array[BUFFER_SIZE];
 int main(void)
 {
+  /*
 	gpioPinDirection(GPIOB,BIT3,OUTPUT);
 	Uart_Init(Baud9600,OneStopBit,NoParity,EightBits,ASynchronous);
 	Enable_communication_interrupt();
 	SPI_Init();
-	//Led_On(LED_0);
-	//Uart_tryansmitfirstbyte(data_signature);
-  //u8_DATA=UDR;
-	SPDR=u8_DATA;
-  //Uart_tryansmitfirstbyte(u8_DATA);
+*/
+BCM_Init (&BCM_Configuration);
+/*	SPDR=u8_DATA;*/
+BCM_Send(UARTANDSPI,'M',250,4);
+
+
 
     while(1)
     {

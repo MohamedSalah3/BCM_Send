@@ -6,8 +6,12 @@
  */
  #include "BCM_Config.h"
 const BCM_ConfigType BCM_Configuration = {
- SPI,
- TASK1_ID,
+/*Communication method*/
+ UARTANDSPI,
+ /*BCM_ID*/
+TASK1_ID,
+/*Number of  data bytes per frame*/
 1000,
-1
+/*Number of frames*/
+4/*Wich means every frame is have 250 bytes*/
 };

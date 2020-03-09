@@ -76,5 +76,4 @@ SPCR=0;
 void spi_send_first(uint8_t data)
 {
 SPDR=data;
-
 }

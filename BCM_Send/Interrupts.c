@@ -6,6 +6,8 @@
  *  Author: mo
  */
 #include "Interrupts.h"
+extern void SPI_int_Master_Send(void);
+extern void Uart_Int_RX(void);
 ptr_to_Fun INT0_external_interrupt;
 ptr_to_Fun INT1_external_interrupt;
 ptr_to_Fun INT2_external_interrupt;//=check_button;
@@ -18,7 +20,7 @@ ptr_to_Fun TIMER1OVF;
 ptr_to_Fun TIMER0COMP=Timer_interrupt_COMP_routine;
 ptr_to_Fun TIMER0OVF_INT;//=Timer_interrupt_routine;
 ptr_to_Fun SPI_STC=SPI_Transciever_INT;
-ptr_to_Fun USART_RXC=UartRecieveInterrupt;
+ptr_to_Fun USART_RXC=Uart_Int_RX;
 ptr_to_Fun USART_UDRE;
 ptr_to_Fun USART_TXC;//=UartTransmitInterrupt;
 ptr_to_Fun ADC_INT;
