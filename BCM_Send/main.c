@@ -25,7 +25,7 @@ BCM_Send(UARTANDSPI,'M',250,4);
 
     while(1)
     {
-
+      BCM_TxDispatcher();
         //TODO:: Please write your application code
     }
 }

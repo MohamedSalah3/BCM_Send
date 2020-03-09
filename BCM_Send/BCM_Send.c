@@ -84,11 +84,15 @@ return ret;
 ERROR_STATUS BCM_TxDispatcher(void)
 {
 uint8_t ret=E_OK;
+uint8_t Checksum=0;
+
+Checksum+=u8_DATA;
 /******Disable SPI int******/
 /*while uart is filling buffer*/
 /*calculate check sum*/
 /*Enable Spi int and disable uart int when buffer is full*/
 /*When spi emptys buffer enable uart interrupt*/
+Buffer_Array[size-1]=Checksum;
 
 return ret;
 }
@@ -135,7 +139,7 @@ switch (u8_channel_Protcol)
 void Uart_Int_RX(void)
 {
   u8_DATA=UDR;
-  if(u8Index<size)
+  if(u8Index<size-1)
   {
     Buffer_Array[u8Index]=u8_DATA;
     u8Index++;
@@ -150,7 +154,7 @@ void SPI_int_Master_Send(void)
 {
   /******Disable uart Rx int******/
   SPDR=u8_DATA;
-  if(u8Index<size)
+  if(u8Index<size-1)
   {
     u8_DATA=Buffer_Array[u8Index];
     u8Index++;
