@@ -7,7 +7,7 @@
  #include "BCM_Send.h"
 #define BUFFER_SIZE 255
 uint8_t size=BUFFER_SIZE;
- volatile uint8_t u8_DATA='T';
+ volatile uint8_t u8_DATA='Z';
 uint8_t Buffer_Array[BUFFER_SIZE];
 int main(void)
 {
@@ -19,7 +19,7 @@ int main(void)
 */
 BCM_Init (&BCM_Configuration);
 /*	SPDR=u8_DATA;*/
-BCM_Send(UARTANDSPI,'M',250,4);
+BCM_Send(UARTANDSPI,'N',250,4);
 
 
 

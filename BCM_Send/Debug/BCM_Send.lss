@@ -394,7 +394,7 @@ u8Index=2;
      19a:	92 e0       	ldi	r25, 0x02	; 2
      19c:	90 93 7a 00 	sts	0x007A, r25
 /*************************************************************/
-            /*                                */
+/*                                                           */
 /*************************************************************/
 
 switch (u8_channel_Protcol)
@@ -537,6 +537,7 @@ void SPI_int_Master_Send(void)
   SPDR=u8_DATA;
      21c:	80 91 65 00 	lds	r24, 0x0065
      220:	8f b9       	out	0x0f, r24	; 15
+
   if(u8Index<size-1)
      222:	40 91 7a 00 	lds	r20, 0x007A
      226:	84 2f       	mov	r24, r20
@@ -577,9 +578,9 @@ BCM_Init (&BCM_Configuration);
      258:	90 e0       	ldi	r25, 0x00	; 0
      25a:	0e 94 49 00 	call	0x92	; 0x92 <BCM_Init>
 /*	SPDR=u8_DATA;*/
-BCM_Send(UARTANDSPI,'M',250,4);
+BCM_Send(UARTANDSPI,'N',250,4);
      25e:	83 e0       	ldi	r24, 0x03	; 3
-     260:	6d e4       	ldi	r22, 0x4D	; 77
+     260:	6e e4       	ldi	r22, 0x4E	; 78
      262:	4a ef       	ldi	r20, 0xFA	; 250
      264:	24 e0       	ldi	r18, 0x04	; 4
      266:	0e 94 c7 00 	call	0x18e	; 0x18e <BCM_Send>

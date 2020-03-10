@@ -87,6 +87,7 @@ uint8_t ret=E_OK;
 uint8_t Checksum=0;
 
 Checksum+=u8_DATA;
+
 /******Disable SPI int******/
 /*while uart is filling buffer*/
 /*calculate check sum*/
@@ -110,7 +111,7 @@ Buffer_Array[0]=u8_BCM_ID;
 Buffer_Array[1]=u8_data_Lenght;
 u8Index=2;
 /*************************************************************/
-            /*                                */
+/*                                                           */
 /*************************************************************/
 
 switch (u8_channel_Protcol)
@@ -154,6 +155,7 @@ void SPI_int_Master_Send(void)
 {
   /******Disable uart Rx int******/
   SPDR=u8_DATA;
+
   if(u8Index<size-1)
   {
     u8_DATA=Buffer_Array[u8Index];
